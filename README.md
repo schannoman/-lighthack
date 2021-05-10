@@ -12,7 +12,8 @@ This code uses <b>A0, A1, A2, A3</b> respectively for encoder wheels and I am un
 <br><br>
 This also requires the encoder button connections to be soldered in and connected to function. Box1 instructions do not include this, and your encoders may vary.
 <br><br>
-You can select encoder groups in twos from the list provided, Arduino Uno can handle a maximum of 14 parameters (7 pairs). <br>
+You can select encoder groups in twos from the list provided. <br>
+Arduino Uno can handle a maximum of 14 parameters (7 pairs). <br>
 I leave some blank using none for better grouping. This is entirely flexible. 
 <br><br>
 Line 366 can be adjusted to change the rate of the fine wheel encoder motion. WHEEL_ACC is defined on line 80
