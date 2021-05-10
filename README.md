@@ -10,7 +10,8 @@ On nomad you can use other boards, but you have to figure out which works.
 Pinout for the Encoder wheels is slightly different from the EOS box1 code. <br>
 This code uses <b>A0, A1, A2, A3</b> respectively for encoder wheels and I am unable to find where to change this in the code.
 <br><br>
-This also requires the encoder button connections to be soldered in and connected to function. Box1 instructions do not include this, and your encoders may vary.
+This also requires the encoder button connections to be soldered in and connected to function. <br>
+Box1 instructions do not include this, and your encoders may vary.
 <br><br>
 You can select encoder groups in twos from the list provided. <br>
 Arduino Uno can handle a maximum of 14 parameters (7 pairs). <br>
