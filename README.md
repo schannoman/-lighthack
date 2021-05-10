@@ -14,6 +14,8 @@ This also requires the encoder button connections to be soldered in and connecte
 <br><br>
 You can select encoder groups in twos from the list provided, Arduino Uno can handle a maximum of 14 parameters (7 pairs). <br>
 I leave some blank using none for better grouping. This is entirely flexible. 
+<br><br>
+Line 366 can be adjusted to change the rate of the fine wheel encoder motion.
 
 <h1>Dependencies</h1>
 Requires the Arduino OSC parsing library maintained by the great folks over at CNMAT. https://github.com/CNMAT/OSC<br>
