@@ -38,49 +38,49 @@
 #endif
 
 // constants and macros
-#define LCD_CHARS				16
-#define LCD_LINES				2
+#define LCD_CHARS	16
+#define LCD_LINES	2
 
 //Button pinout is code flexible 
 #define NEXT_BTN        6
 #define LAST_BTN        7
 #define SHIFT_BTN       8
-#define PARAM_UP_BTN		9
+#define PARAM_UP_BTN	9
 #define PARAM_DOWN_BTN	10
 
 // Encoder pinout is picky and I personally don't know how to reroute from this
-#define ENC_1_A					A0
-#define ENC_1_B					A1
-#define ENC_2_A					A2
-#define ENC_2_B					A3
+#define ENC_1_A		A0
+#define ENC_1_B		A1
+#define ENC_2_A		A2
+#define ENC_2_B		A3
 
-#define SUBSCRIBE				1
-#define UNSUBSCRIBE			0
+#define SUBSCRIBE	1
+#define UNSUBSCRIBE	0
 
-#define UP							0
-#define DOWN						1
+#define UP		0
+#define DOWN		1
 
-#define EDGE_DOWN           ((int32_t)1)
-#define EDGE_UP             ((int32_t)0)
+#define EDGE_DOWN       ((int32_t)1)
+#define EDGE_UP         ((int32_t)0)
 
 // number of encoders you use
-#define ENCODERS				2
+#define ENCODERS	2
 
 // These define which direction is "forward" for an encoder
-#define FORWARD					0
-#define REVERSE					1
+#define FORWARD		0
+#define REVERSE		1
 
 // Change these values to switch which direction increase/decrease pan/tilt
-#define ENC_1_DIR				REVERSE
-#define ENC_2_DIR				REVERSE
+#define ENC_1_DIR	REVERSE
+#define ENC_2_DIR	REVERSE
 
 // Use these values to make the encoder more coarse or fine. This controls
 // the number of wheel "ticks" the device sends to Eos for each tick of the
 // encoder. 1 is the default and the most fine setting. Must be an integer.
-#define WHEEL_ACC				4 // only used for intens
-#define SIG_DIGITS			2 // number of significant digits displayed
+#define WHEEL_ACC	4 // only used for intens
+#define SIG_DIGITS	2 // number of significant digits displayed
 
-#define PING_AFTER_IDLE_INTERVAL		2500
+#define PING_AFTER_IDLE_INTERVAL	2500
 #define TIMEOUT_AFTER_IDLE_INTERVAL	5000
 
 const String VERSION = "#lighthack box2C";
@@ -120,33 +120,33 @@ struct Parameter {
 
 const uint8_t PARAMETER_MAX = 14; // number of parameters must even, board can handle a maximum of 14 parameters
 struct Parameter parameter[PARAMETER_MAX] = {
-  {"Intens"},
+ 	{"Intens"},
 	{"Iris"},
 	{"Pan"},
 	{"Tilt"},
 	{"Zoom"},
 	{"Edge"},
-  //{"Diffusn"},
-  //{"Hue"},
-  //{"Saturatn"},
+  	//{"Diffusn"},
+ 	//{"Hue"},
+ 	//{"Saturatn"},
 	{"Red"},
 	{"Green"},
 	{"Blue"},
-  {"none", "------"},
+ 	{"none", "------"},
 	{"Cyan"},
 	{"Magenta"},
 	{"Yellow"},
-  {"none", "------"}/*,
-  {"cto", "CTO"},
-  {"frame_assembly", "Assembly"},
-  {"thrust_A", "ThrustA"},
-  {"angle_A", "AngleA"},
-  {"thrust_B", "ThrustB"},
-  {"thrust_B", "AngleB"},
-  {"thrust_C", "ThrustC"},
-  {"angle_C", "AngleC"},
-  {"thrust_D", "ThrustD"},
-  {"angle_D", "AngleD"}*/
+  	{"none", "------"}/*,
+  	{"cto", "CTO"},
+  	{"frame_assembly", "Assembly"},
+  	{"thrust_A", "ThrustA"},
+  	{"angle_A", "AngleA"},
+  	{"thrust_B", "ThrustB"},
+  	{"thrust_B", "AngleB"},
+  	{"thrust_C", "ThrustC"},
+  	{"angle_C", "AngleC"},
+  	{"thrust_D", "ThrustD"},
+  	{"angle_D", "AngleD"}*/
 	};
 
 struct Encoder {
@@ -362,7 +362,8 @@ void updateEncoder(struct Encoder* encoder) {
 			}
 		else if (encoder->parameterIdx > 1) {
 			if (digitalRead(SHIFT_BTN) == LOW) wheelMsg.concat("/fine");
-      if (digitalRead(SHIFT_BTN) == LOW) encoderMotion *=10;
+//You can change the encoderMotion multiple here to adjust the speed of the fine wheel adjustment in relation to the parameter WHEEL_ACC
+			if (digitalRead(SHIFT_BTN) == LOW) encoderMotion *=10;
 			else wheelMsg.concat("/coarse"); encoderMotion *= WHEEL_ACC;
 			}
 		wheelMsg.concat('/' + parameter[encoder->parameterIdx].name);
