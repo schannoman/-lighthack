@@ -2,6 +2,7 @@
 
 These are projects based original on the #lighthack project from ETC https://github.com/ETCLabs/lighthack
 You find further informations also in the ETC forum https://community.etcconnect.com/etclabs/f/lighthack
+Code is based on Box2A and Box2B by Stefan Saub https://github.com/sstaub and box1 from ETC
 All projects uses an Arduino Arduino UNO, but also an Arduino MEGA gives you connection to your console. On nomad you can use other boards, but you have to figure out which works.
 
 <h1>Important Notes</h1>
