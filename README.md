@@ -3,7 +3,7 @@
 These are projects based original on the #lighthack project from ETC https://github.com/ETCLabs/lighthack<br>
 You find further informations also in the ETC forum https://community.etcconnect.com/etclabs/f/lighthack<br>
 Code is based on Box2A and Box2B by Stefan Staub https://github.com/sstaub and box1 from ETC<br>
-All projects use an Arduino Arduino UNO
+All projects use an Arduino UNO
 
 <h1>Important Notes</h1>
 Pinout for the Encoder wheels is slightly different from the EOS box1 code. <br>
